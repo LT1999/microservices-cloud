@@ -26,8 +26,7 @@ public class OrderController {
     private RestTemplate restTemplate;
     @GetMapping("/downOrder/{bookId}")
     public String downOrder(@PathVariable Integer bookId){
-        String result = restTemplate.getForObject(REMOTE_URL+"/book/getBooks?bookId="+bookId,String.class);
-        return result;
+        return restTemplate.getForObject(REMOTE_URL+"/book/getBooks?bookId="+bookId,String.class);
     }
 
 }
